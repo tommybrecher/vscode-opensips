@@ -1,0 +1,38 @@
+{
+    "name": "vscode-opensips",
+    "displayName": "vscode-opensips",
+    "description": "OpenSIPs Syntax Highlight for VS Code",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.41.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "opensips",
+                "aliases": [
+                    "OpenSIPs Syntax Highlight for VS Code",
+                    "opensips"
+                ],
+                "extensions": [
+                    ".cfg",
+                    ".cfg.j2"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "opensips",
+                "scopeName": "source.opensips",
+                "path": "./syntaxes/opensips.tmLanguage.json",
+                "embeddedLanguages": {
+                    "meta.embedded.block.jinja": "jinja"
+                }
+            }
+        ]
+    }
+}

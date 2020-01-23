@@ -1,0 +1,201 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "OpenSIPs Syntax Highlight for VS Code",
+	"foldingStartMarker": "(?x)/\\*\\*(?!\\*)|^(?![^{]*?//|[^{]*?/\\*(?!.*?\\*/.*?\\{)).*?\\{\\s*($|//|/\\*(?!.*?\\*/.*\\S))",
+	"foldingStopMarker": "(?<!\\*)\\*\\*/|^\\s*\\}",
+	"patterns": [
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#punctuation"
+		},
+		{
+			"comment": "Line comment",
+			"begin": "\\#[^!]",
+			"end": "\\n",
+			"name": "comment.line.number-sign.opensips"
+		},
+		{
+			"comment": "Line comment",
+			"begin": "//",
+			"end": "\\n",
+			"name": "comment.line.double-slash.opensips"
+		},
+		{
+			"comment": "Block comment",
+			"begin": "/\\*",
+			"end": "\\*/",
+			"name": "comment.block.opensips"
+		},
+		{
+			"begin": "\"",
+			"end": "\"",
+			"name": "string.quoted.double.opensips"
+		},
+		{
+			"begin": "'",
+			"end": "'",
+			"name": "string.quoted.single.opensips"
+		},
+		{
+			"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)\\b",
+			"name": "constant.numeric.opensips"
+		},
+		{
+			"comment": "Main routing blocks without name",
+			"match": "\\b(startup_route)\\b",
+			"name": "support.function.opensips"
+		},
+		{
+			"comment": "Main routing blocks with name",
+			"match": "\\b(route|branch_route|failure_route|onreply_route|event_route)\\s*\\[([^\\]]+)\\]",
+			"captures": {
+				"1": {
+					"name": "entity.name.class.opensips"
+				},
+				"2": {
+					"name": "constant.other.opensips"
+				}
+			},
+			"name": "support.function.opensips"
+		},
+		{
+			"comment": "Executing routing blocks with name",
+			"match": "\\b(route)\\s*\\(([^)]+)\\)",
+			"captures": {
+				"1": {
+					"name": "keyword.source.opensips"
+				},
+				"2": {
+					"name": "constant.other.opensips"
+				}
+			},
+			"name": "support.function.opensips"
+		},
+		{
+			"match": "\\b(exit|return|drop|break|if|else|while|switch|case|default)\\b",
+			"name": "keyword.control.conditional.opensips"
+		},
+		{
+			"match": "\\b(include_file|import_file)\\b",
+			"name": "storage.type.primitive.opensips"
+		},
+		{
+			"match": "(\\#[!]|[!]{2})(include_file|import_file)\\b",
+			"name": "storage.type.primitive.opensips"
+		},
+		{
+			"match": "(\\$)null\\b",
+			"name": "constant.language.null.opensips"
+		},
+		{
+			"comment": "variables with inner name and root parenthesis",
+			"match": "(\\$)\\([a-zA-Z0-9_]+\\(([a-zA-Z0-9_]+)\\)\\)",
+			"captures": {
+				"1": {
+					"name": "support.variable.opensips"
+				},
+				"2": {
+					"name": "constant.other.opensips"
+				}
+			},
+			"name": "support.variable.opensips"
+		},
+		{
+			"comment": "variables with inner name",
+			"match": "(\\$)[a-zA-Z0-9_]+\\(([a-zA-Z0-9_]+)\\)",
+			"captures": {
+				"1": {
+					"name": "support.variable.opensips"
+				},
+				"2": {
+					"name": "constant.other.opensips"
+				}
+			},
+			"name": "support.variable.opensips"
+		},
+		{
+			"comment": "variables with simple name and root parenthesis",
+			"match": "(\\$)\\([a-zA-Z0-9_]+\\)",
+			"name": "support.variable.opensips"
+		},
+		{
+			"comment": "variables with simple name",
+			"match": "(\\$)[a-zA-Z0-9_]+\\b",
+			"name": "support.variable.opensips"
+		},
+		{
+			"match": "\\b(true|yes|on|enabled)\\b",
+			"name": "constant.language.boolean.true.opensips"
+		},
+		{
+			"match": "\\b(false|no|off|disabled)\\b",
+			"name": "constant.language.boolean.false.opensips"
+		},
+		{
+			"match": "\\b(loadmodule|modparam|mpath|listen|alias|has_totag|t_relay|loose_route|uac_restore_from|uac_restore_to|t_add_hdrs|t_newtran|force_rport|mmg_lookup|mf_process_maxfwd_header|is_avp_set|t_check_status|uac_replace_from|uac_replace_to|rl_check|fetch_event_params|cache_store|cache_fetch|ds_next_dst|t_on_reply|cache_raw_query|setflag|topology_hiding_match|isflagset|record_route|ds_select_dst|t_on_failure|is_in_profile|set_dlg_profile|search|do_accounting|is_ip_registered|t_on_reply|add_sock_hdr|setbflag|send_reply|ds_is_in_list|nat_uac_test|fix_nated_register|fix_nated_contact|has_body|fix_nated_sdp|update_stat|is_method|lookup|create_dialog|t_check_trans|xlog|topology_hiding|append_hf|advertised_address|dns|dns_retr_time|dns_retr_no|server_header|user_agent_header|tos|tcp_children|children|xlog_buf|size|log_name|log_facility|log_stderror|log_level|debug_mode|tcp_accept_aliases|tcp_keepalive|tcp_keepcount|tcp_keepidle|tcp_keepinterval|tcp_max_connections|tcp_threshold|tcp_max_msg_time|tcp_connection_lifetime|tcp_no_new_conn_bflag|tcp_no_new_conn_rplflag|xlog_buf_size)\\b",
+			"name": "keyword.source.opensips"
+		},
+		{
+			"comment": "Core keyword variables",
+			"match": "\\b(af|dst_ip|dst_port|from_uri|msg:len|proto|status|snd_af|snd_ip|snd_port|snd_proto|src_ip|src_port|to_af|to_ip|to_port|to_proto|to_uri|uri|uri:host|uri:port)\\b",
+			"name": "support.variable.opensips"
+		},
+		{
+			"comment": "Core keyword values",
+			"match": "\\b(max_len|myself|udp|UDP|tcp|TCP|tls|TLS|sctp|SCTP|ws|WS|wss|WSS|inet|INET|inet6|INET6|sslv23|SSLv23|SSLV23|sslv2|SSLv2|SSLV2|sslv3|SSLv3|SSLV3|tlsv1|TLSv1|TLSV1)\\b",
+			"name": "constant.language.opensips"
+		},
+		{
+			"comment": "Syslog facility values",
+			"match": "\\b(LOG_LOCAL[0-9]+)\\b",
+			"name": "constant.language.opensips"
+		},
+		{
+			"match": "=|~|<|>|\\+|-|\\*|\\^|&|/|\\||!|\\b(?i:(mod|and|not|or|xor|defined|eq|ieq|ne|ine))\\b",
+			"name": "keyword.operator.opensips"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.opensips",
+					"match": "\\b(if|else|while|switch|case|break|default|return|drop|exit)\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.opensips",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.opensips",
+					"match": "\\\\."
+				}
+			]
+		},
+		"punctuation": {
+			"patterns": [
+				{
+					"match": ",",
+					"name": "punctuation.comma.opensips"
+				},
+				{
+					"match": ";",
+					"name": "punctuation.terminator.opensips"
+				},
+				{
+					"match": "\\.",
+					"name": "punctuation.dot.opensips"
+				}
+			]
+		}
+	},
+	"scopeName": "source.opensips"
+}
