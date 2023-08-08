@@ -1,14 +1,23 @@
 {
     "name": "vscode-opensips",
     "displayName": "vscode-opensips",
-    "description": "OpenSIPs Syntax Highlight for VS Code",
-    "version": "1.0.0",
+    "description": "vscode-opensips",
+    "publisher": "Tommy Brecher",
+    "version": "1.0.2",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tommybrecher/vscode-opensips.git"
+    },
     "engines": {
         "vscode": "^1.41.0"
     },
     "categories": [
         "Programming Languages"
     ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
@@ -34,5 +43,19 @@
                 }
             }
         ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "lint": "eslint \"src/**/*.ts\"",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "@types/node": "^16.11.7",
+        "@types/vscode": "^1.32.0",
+        "@typescript-eslint/eslint-plugin": "^5.42.0",
+        "@typescript-eslint/parser": "^5.42.0",
+        "eslint": "^8.26.0",
+        "typescript": "^4.8.4"
     }
 }

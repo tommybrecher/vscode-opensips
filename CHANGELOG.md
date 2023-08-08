@@ -1,9 +1,13 @@
 # Change Log
 
-All notable changes to the "vscode-opensips" extension will be documented in this file.
+## 1.0.0
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
+-  Initial release
 
-## [Unreleased]
+## 1.0.1
 
-- Initial release
+- Compile using latest lts node version
+
+## 1.0.2
+
+-  Change activation event from * to onStartupFinished
