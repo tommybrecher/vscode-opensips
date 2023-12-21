@@ -2,7 +2,7 @@
     "name": "vscode-opensips",
     "displayName": "vscode-opensips",
     "description": "vscode-opensips",
-    "publisher": "Tommy Brecher",
+    "publisher": "TommyBrecher",
     "version": "1.0.2",
     "repository": {
         "type": "git",
@@ -14,10 +14,6 @@
     "categories": [
         "Programming Languages"
     ],
-    "activationEvents": [
-        "onStartupFinished"
-    ],
-    "main": "./out/extension.js",
     "contributes": {
         "languages": [
             {
@@ -48,7 +44,8 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "lint": "eslint \"src/**/*.ts\"",
-        "watch": "tsc -watch -p ./"
+        "watch": "tsc -watch -p ./",
+        "package": "vsce package"
     },
     "devDependencies": {
         "@types/node": "^16.11.7",
