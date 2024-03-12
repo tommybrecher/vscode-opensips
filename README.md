@@ -24,3 +24,8 @@ Syntax highlight for opensips configuration language (2.x.x)
 ### 1.0.2
 
 * Change activation event from * to onStartupFinished
+
+### 1.0.3
+
+* Added method highlighting for the functions use_next_gw t_was_cancelled t_local_replied dp_translate remove_hf
+* Added local_route & timer_route highlighting

@@ -53,7 +53,7 @@
 		{
 			"comment": "Routing blocks without",
 			"name": "entity.name.function.opensips",
-			"match": "\\b(route|branch_route|failure_route|onreply_route|event_route)\\b"
+			"match": "\\b(route|branch_route|failure_route|onreply_route|event_route|local_route|timer_route)\\b"
 		},
 		{
 			"comment": "Executing routing blocks with name",
@@ -133,7 +133,7 @@
 			"name": "constant.language.boolean.false.opensips"
 		},
 		{
-			"match": "\\b(loadmodule|modparam|mpath|listen|alias|has_totag|t_relay|loose_route|uac_restore_from|uac_restore_to|t_add_hdrs|t_newtran|force_rport|mmg_lookup|mf_process_maxfwd_header|is_avp_set|t_check_status|uac_replace_from|uac_replace_to|rl_check|fetch_event_params|cache_store|cache_fetch|ds_next_dst|t_on_reply|cache_raw_query|setflag|topology_hiding_match|isflagset|record_route|ds_select_dst|t_on_failure|is_in_profile|set_dlg_profile|search|do_accounting|is_ip_registered|t_on_reply|add_sock_hdr|setbflag|send_reply|ds_is_in_list|nat_uac_test|fix_nated_register|fix_nated_contact|has_body|fix_nated_sdp|update_stat|is_method|lookup|create_dialog|t_check_trans|xlog|topology_hiding|append_hf|advertised_address|dns|dns_retr_time|dns_retr_no|server_header|user_agent_header|tos|tcp_children|children|xlog_buf|size|log_name|log_facility|log_stderror|log_level|debug_mode|tcp_accept_aliases|tcp_keepalive|tcp_keepcount|tcp_keepidle|tcp_keepinterval|tcp_max_connections|tcp_threshold|tcp_max_msg_time|tcp_connection_lifetime|tcp_no_new_conn_bflag|tcp_no_new_conn_rplflag|xlog_buf_size)\\b",
+			"match": "\\b(loadmodule|modparam|mpath|listen|alias|has_totag|t_relay|loose_route|uac_restore_from|uac_restore_to|t_add_hdrs|t_newtran|force_rport|mmg_lookup|mf_process_maxfwd_header|is_avp_set|t_check_status|uac_replace_from|uac_replace_to|rl_check|fetch_event_params|cache_store|cache_fetch|ds_next_dst|t_on_reply|cache_raw_query|setflag|topology_hiding_match|isflagset|record_route|ds_select_dst|t_on_failure|is_in_profile|set_dlg_profile|search|do_accounting|is_ip_registered|t_on_reply|add_sock_hdr|setbflag|send_reply|ds_is_in_list|nat_uac_test|fix_nated_register|fix_nated_contact|has_body|fix_nated_sdp|update_stat|is_method|lookup|create_dialog|t_check_trans|xlog|topology_hiding|append_hf|advertised_address|dns|dns_retr_time|dns_retr_no|server_header|user_agent_header|tos|tcp_children|children|xlog_buf|size|log_name|log_facility|log_stderror|log_level|debug_mode|tcp_accept_aliases|tcp_keepalive|tcp_keepcount|tcp_keepidle|tcp_keepinterval|tcp_max_connections|tcp_threshold|tcp_max_msg_time|tcp_connection_lifetime|tcp_no_new_conn_bflag|tcp_no_new_conn_rplflag|xlog_buf_size|use_next_gw|t_was_cancelled|t_local_replied|dp_translate|remove_hf)\\b",
 			"name": "keyword.source.opensips"
 		},
 		{
